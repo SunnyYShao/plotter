@@ -19,7 +19,7 @@ aapidata_style <- function() {
     plot.title = ggplot2::element_text(family=font,
                                        size=32,
                                        face="bold",
-                                       color="#3f3f3f"),
+                                       color="#DFD8C0"),
     #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
     plot.subtitle = ggplot2::element_text(family=font,
                                           size=24,
@@ -40,7 +40,9 @@ aapidata_style <- function() {
     
     #Axis format
     #This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart - the cookbook shows examples of how to do so.
-    axis.title = ggplot2::element_blank(),
+    axis.title = ggplot2::element_text(family=font,
+                                       size=18,
+                                       color="#3f3f3f"),
     axis.text = ggplot2::element_text(family=font,
                                       size=18,
                                       color="#222222"),
