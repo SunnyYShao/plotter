@@ -4,7 +4,7 @@ source("color_scheme.R")
 dta <- read_csv("color_test.csv")
   plot <- dta %>%
     ggplot(aes(x = group, y = prop, fill = key)) +
-    geom_col(width = .7) +
+    geom_col(width = .7, colour="transparent") +
     scale_y_continuous(labels = scales::percent, limits = c(0, 1.1)) +
     hrbrthemes::theme_modern_rc(grid = "", plot_title_size = 32, axis_text_size = 25, caption_size = 12, subtitle_size = 24) +
     labs(
@@ -29,7 +29,7 @@ dta <- read_csv("color_test.csv")
         colour = "#3F3F3F")) +
     coord_flip() +
     geom_text(family = "Roboto Condensed", fontface = "bold", size = 7, position = position_stack(vjust = 0.5), aes(label = ifelse(prop < .03, NA, scales::percent(prop, 2)))) +
-    scale_color_aapidata(palette = "scale", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
+    scale_fill_aapidata(palette = "scale3", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
     guides(fill = guide_legend(reverse = TRUE)) +
     theme(
       legend.position = "top",
