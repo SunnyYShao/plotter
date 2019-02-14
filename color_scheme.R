@@ -30,10 +30,13 @@ aapidata_palettes <- list(
   #the code pull colors from both end (instead of  left-to-right)
   
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
+  
   `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
+  
   `scale3` = aapidata_cols("red", "grey", "orange"),
-  `scale2
-  ` = aapidata_cols("red", "grey", "orange"),
+  
+  `scale2` = aapidata_cols("red", "orange"),
+  
   `cat4`  = aapidata_cols("light orange", "orange", "light blue",  "blue"),
   
   `cat2`  = aapidata_cols("orange", "blue"),

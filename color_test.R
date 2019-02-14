@@ -1,7 +1,7 @@
 library(tidyverse)
 library(readxl)
 source("color_scheme.R")
-dta <- read_csv("/Users/sunnyshao/Desktop/color_test.csv")
+dta <- read_csv("color_test.csv")
   plot <- dta %>%
     ggplot(aes(x = group, y = prop, fill = key)) +
     geom_col(width = .7) +
