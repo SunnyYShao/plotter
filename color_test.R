@@ -28,7 +28,7 @@ dta <- read_csv("color_test.csv")
         fill = "#3F3F3F",
         colour = "#3F3F3F")) +
     coord_flip() +
-    geom_text(family = "Roboto Condensed", fontface = "bold", size = 7, position = position_stack(vjust = 0.5), aes(label = ifelse(prop < .03, NA, scales::percent(prop, 2)))) +
+    geom_text(family = "Roboto Condensed", colour = "#dfd8c0", fontface = "bold", size = 7, position = position_stack(vjust = 0.5), aes(label = ifelse(prop < .03, NA, scales::percent(prop, 2)))) +
     scale_fill_aapidata(palette = "scale3", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
     guides(fill = guide_legend(reverse = TRUE)) +
     theme(
