@@ -1,7 +1,9 @@
 library(tidyverse)
 library(readxl)
 source("color_scheme.R")
-dta <- read_csv("color_test.csv")
+dta <- read_csv("color_test.csv") %>% 
+  filter(!key == "no difference") %>% 
+  filter(!key == "strongly disagree")
   plot <- dta %>%
     ggplot(aes(x = group, y = prop, fill = key)) +
     geom_col(width = .7, colour="transparent") +
@@ -29,7 +31,7 @@ dta <- read_csv("color_test.csv")
         colour = "#3F3F3F")) +
     coord_flip() +
     geom_text(family = "Roboto Condensed", colour = "#dfd8c0", fontface = "bold", size = 7, position = position_stack(vjust = 0.5), aes(label = ifelse(prop < .03, NA, scales::percent(prop, 2)))) +
-    scale_fill_aapidata(palette = "scale3", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
+    scale_fill_aapidata(palette = "scale7", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
     guides(fill = guide_legend(reverse = TRUE)) +
     theme(
       legend.position = "top",

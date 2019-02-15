@@ -28,7 +28,7 @@ aapidata_cols()
 #each color palette need to have the same number of groups as the table we are trying to graph
 aapidata_palettes <- list(
   #the code pull colors from both end (instead of  left-to-right)
-  
+  `scale7` = aapidata_cols("red", "light red", "orange", "light orange", "grey", "light blue", "blue"),
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
   
   `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
@@ -99,7 +99,7 @@ scale_fill_aapidata <- function(palette = "scale", discrete = TRUE, reverse = FA
   if (discrete) {
     discrete_scale("fill", paste0("aapidata_", palette), palette = pal, ...)
   } else {
-    scale_fill_gradientn(colours = pal(256), ...)
+    scale_fill_gradientn(colours = pal(100), ...)
   }
 }
 
