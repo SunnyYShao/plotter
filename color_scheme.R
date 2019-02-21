@@ -9,7 +9,9 @@ aapidata <- c(
   `tan`       = "#EDDD9D",
   `light blue`     = "#A3C8D1",
   `blue`     = "#63BBD1",
+  `deep blue` = "#1BACCE",
   `grey` = "#C6C4C4",
+  `darker grey` = "#B2B1B1",
   `light red`  = "#E28A86",
   `red`  = "#DC7070")
 
@@ -28,58 +30,45 @@ aapidata_cols()
 #each color palette need to have the same number of groups as the table we are trying to graph
 aapidata_palettes <- list(
   #the code pull colors from both end (instead of  left-to-right)
-  `scale7` = aapidata_cols("red", "light red", "orange", "light orange", "grey", "light blue", "blue"),
-  `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
+  `single_red` = aapidata_cols("red"),
   
-  `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
+  `single_blue` = aapidata_cols("blue"),
   
-  `scale3` = aapidata_cols("red", "grey", "orange"),
+  `single_orange` = aapidata_cols("orange"),
   
   `scale2` = aapidata_cols("red", "orange"),
   
-  `cat4`  = aapidata_cols("light orange", "orange", "light blue",  "blue"),
+  `scale3` = aapidata_cols("red", "grey", "orange"),
   
-  `cat2`  = aapidata_cols("orange", "blue"),
+  `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
   
-  `partisan_DRIOD`   = aapidata_cols("grey", "tan", "light orange", "orange", "red", "blue"),
+  `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
   
-  `partisan_RDSD` = aapidata_cols("grey", "orange", "blue", "red"),
+  `scale6` = aapidata_cols("red", "light red", "orange", "light orange", "light blue", "blue"),
   
-  `partisan_DRD` = aapidata_cols("grey", "red", "blue"),
+  `degree_blue` = aapidata_cols("deep blue", "darker grey"),
   
-  `partisan3_SD`  = aapidata_cols( "grey", "light blue", "blue"),
+  `degree_red` = aapidata_cols("red", "darker grey"),
   
-  `partisan3_SR`  = aapidata_cols("light blue", "grey", "red"),
+  `degree_orange` = aapidata_cols("orange","darker grey"),
   
-  `partisan_DROD` = aapidata_cols("grey", "orange", "red", "blue"),
+  `yes_no`  = aapidata_cols("orange", "blue"),
   
-  `scale3_1m`  = aapidata_cols("blue", "tan", "orange"),
+  `cat3`  = aapidata_cols("red", "orange", "blue"),
   
-  `scale4_party_2m`  = aapidata_cols("blue", "grey", "tan", "red"),
+  `cat4`  = aapidata_cols("red", "light red", "orange", "blue"),
   
-  `scale4_party_DNDR`  = aapidata_cols("red", "grey", "tan", "blue"),
+  `cat5`  = aapidata_cols("red", "light red", "light orange", "orange", "blue"),
   
-  `scale5_1m`  = aapidata_cols("blue", "light blue", "tan", "light orange", "orange"),
+  `cat6`  = aapidata_cols("red", "light red", "light orange", "orange", "light blue", "blue"),
   
-  `scale5`  = aapidata_cols("grey", "blue", "light blue", "light orange", "orange"),
+  `party2`  = aapidata_cols("red", "blue"),
   
-  # `scale6_2m`  = aapidata_cols("blue", "light blue", "grey", "tan", "light orange", "orange"),
+  `party3`  = aapidata_cols("red", "blue", "orange"),
   
-  `scale4_2m`  = aapidata_cols("blue", "grey", "tan", "orange"),
+  `party4`  = aapidata_cols("red", "light red", "light blue", "blue"))
   
-  `special6`   = aapidata_cols("grey", "tan", "light orange", "orange", "red", "blue"),
   
-  `ordered`    = aapidata_cols("grey", "tan", "light blue", "blue", "light orange", "orange"),
-  
-  `ordered5`    = aapidata_cols("grey", "light blue", "blue", "light orange", "orange"),
-  
-  `ordered4`    = aapidata_cols("grey", "tan", "light orange", "orange"),
-  
-  `yes_no_d`   = aapidata_cols("grey", "blue", "orange"),
-  
-  `yes_no`   = aapidata_cols("blue", "orange"),
-  
-  `yn_BD`   = aapidata_cols("grey", "blue", "tan", "orange"))
 
 #create a function to 
 aapidata_pal <- function(palette = "categorical", reverse = FALSE, ...) {
