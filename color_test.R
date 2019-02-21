@@ -1,16 +1,25 @@
 library(tidyverse)
 library(readxl)
+library(grid)
+library(gridExtra)
+library(magick)
 source("color_scheme.R")
-dta <- read_csv("color_test.csv") ## Reordering dta$key
-dta$key <- factor(dta$key, levels=c("cat1", "cat2", "cat3", "cat4", "cat5", "cat6"))
-  plot <- dta %>%
-    ggplot(aes(x = group, y = prop, fill = key)) +
+# dta <- read_csv("color_test.csv")
+dta <- read_csv("/Users/sunnyshao/Dropbox/AAPIData HQ/Projects/2019-2-11 infographic-slides/fb_2017.csv")
+dta <- dta %>% filter(graphID == 1)
+
+
+# plotting ----------------------------------------------------------------
+
+
+ plot <- dta %>%
+    ggplot(aes(x = reorder(race, prop), y = prop, fill = key)) +
     geom_col(width = .7, colour="transparent") +
     scale_y_continuous(labels = scales::percent, limits = c(0, 1.1)) +
-    hrbrthemes::theme_modern_rc(grid = "", plot_title_size = 32, axis_text_size = 25, caption_size = 12, subtitle_size = 24) +
+    hrbrthemes::theme_modern_rc(grid = "", plot_title_size = 32, axis_text_size = 25, caption_size = 18, subtitle_size = 24) +
     labs(
       y = "AAPI Share of Electorate", x = "", fill = "",
-      caption = "Source: 2018 Asian American Voter Survey (AAVS) by APIAVote and AAPI Data"
+      caption = "Source: Census American Community Survey 2017 1-year file"
     ) +
     theme(
       axis.ticks.length = unit(-1, "cm"),
@@ -30,34 +39,29 @@ dta$key <- factor(dta$key, levels=c("cat1", "cat2", "cat3", "cat4", "cat5", "cat
         colour = "#3F3F3F")) +
     coord_flip() +
     geom_text(family = "Roboto Condensed", colour = "#dfd8c0", fontface = "bold", size = 7, position = position_stack(vjust = 0.5), aes(label = ifelse(prop < .03, NA, scales::percent(prop, 2)))) +
-    scale_fill_aapidata(palette = "degree_blue", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
+    scale_fill_aapidata(palette = "single_orange", guide = guide_legend(reverse = T)) + # this make sure the legend order match with stacked bar order
     guides(fill = guide_legend(reverse = TRUE)) +
     theme(
       legend.position = "top",
       legend.justification = 0.4,
       legend.text = element_text(size = 18),
-      plot.caption = element_text(hjust = .75, vjust = -5))
+      plot.caption = element_text(hjust = .75, vjust = -1))
   
-  plot
-  # add \n after main title this decrease the spacing between logo and title
   
-  # Generating Regular Graphic ----------------------------------------------
   plot_reg <- gridExtra::grid.arrange(
     top = grobTree(
       rectGrob(gp = gpar(fill = "#3F3F3F", col = "#3F3F3F")),
-      textGrob(paste(title, "\n", sep = ""), gp = gpar(col = "white", fontface = "bold", family = "Roboto Condensed", fontsize = 32)),
-      textGrob(paste("\n\n", question, sep = ""), gp = gpar(cex = .8, col = "white", fontface = "italic", family = "Roboto Condensed", fontsize = 24))
-    ),
-    plot, padding = unit(3, "cm")
+      textGrob(paste(dta$title), gp = gpar(col = "white", fontface = "bold", family = "Roboto Condensed", fontsize = 23))),
+    plot, padding = unit(2, "cm")
   )
   ggsave(plot_reg,
-         filename = paste("infographics_ethnicities/", file, ".png", sep = ""),
+         filename = paste("/Users/sunnyshao/Dropbox/AAPIData HQ/Projects/2019-2-11 infographic-slides/", "graph1", ".png", sep = ""),
          width = 14, height = 7, units = "in", dpi = "retina"
   )
-  plot2 <- image_read(paste("infographics_ethnicities/", file, ".png", sep = ""))
-  logo_raw <- image_read("~/Dropbox/AAPIData HQ/Projects/opinion database/aapidata-apia-logo-v2.png") # load image in the right directory
+  plot2 <- image_read(paste("/Users/sunnyshao/Dropbox/AAPIData HQ/Projects/2019-2-11 infographic-slides/", "graph1", ".png", sep = ""))
+  logo_raw <- image_read("~/Dropbox/AAPIData HQ/Projects/2019-2-11 infographic-slides/aapidata-logo-lighter-small.png") # load image in the right directory
   logo <- logo_raw %>%
-    image_scale("800x300") %>% # ORIGINAL
+    image_scale("600x300") %>% # ORIGINAL
     # image_scale("1000x300") %>%
     image_background("#303030", flatten = TRUE) %>%
     image_border("#303030", "1000x40")
@@ -65,5 +69,6 @@ dta$key <- factor(dta$key, levels=c("cat1", "cat2", "cat3", "cat4", "cat5", "cat
   final_plot <- image_append(image_scale(c(logo, plot2), "1400x800"), stack = TRUE)
   final_plot <- image_resize(final_plot, "1024x76
                              8")
-  image_write(final_plot, path = paste("infographics_ethnicities/", file, ".png", sep = ""))
-}
+  image_write(final_plot, path = paste("/Users/sunnyshao/Dropbox/AAPIData HQ/Projects/2019-2-11 infographic-slides/", "graph1", ".png", sep = ""))
+
+  
