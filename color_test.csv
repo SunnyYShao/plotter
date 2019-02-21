@@ -1,26 +1,31 @@
 ﻿group,key,prop
-Cambodian,strongly agree,0.2
-Cambodian,agree,0.15
-Cambodian,no difference,0.15
-Cambodian,disagree,0.1
-Cambodian,strongly disagree,0.4
-Chinese,strongly agree,0.2
-Chinese,agree,0.3
-Chinese,no difference,0.1
-Chinese,disagree,0.1
-Chinese,strongly disagree,0.1
-Indian,strongly agree,0.2
-Indian,agree,0.15
-Indian,no difference,0.15
-Indian,disagree,0.1
-Indian,strongly disagree,0.4
-Korean,strongly agree,0.2
-Korean,agree,0.3
-Korean,no difference,0.1
-Korean,disagree,0.1
-Korean,strongly disagree,0.1
-Native Hawaiian,strongly agree,0.2
-Native Hawaiian,agree,0.15
-Native Hawaiian,no difference,0.15
-Native Hawaiian,disagree,0.1
-Native Hawaiian,strongly disagree,0.4
+Cambodian,cat1,0.2
+Cambodian,cat2,0.15
+Cambodian,cat3,0.15
+Cambodian,cat4,0.1
+Cambodian,cat5,0.4
+Cambodian,cat6,0.1
+Chinese,cat1,0.2
+Chinese,cat2,0.3
+Chinese,cat3,0.1
+Chinese,cat4,0.1
+Chinese,cat5,0.1
+Chinese,cat6,0.1
+Indian,cat1,0.2
+Indian,cat2,0.15
+Indian,cat3,0.15
+Indian,cat4,0.1
+Indian,cat5,0.4
+Indian,cat6,0.1
+Korean,cat1,0.2
+Korean,cat2,0.3
+Korean,cat3,0.1
+Korean,cat4,0.1
+Korean,cat5,0.1
+Korean,cat6,0.1
+Native Hawaiian,cat1,0.2
+Native Hawaiian,cat2,0.15
+Native Hawaiian,cat3,0.15
+Native Hawaiian,cat4,0.1
+Native Hawaiian,cat5,0.4
+Native Hawaiian,cat6,0.1
