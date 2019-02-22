@@ -16,15 +16,32 @@ left_align <- function(plot_name, pieces){
 }
 
 create_footer <- function (source_name, logo_image_path) {
-  #Make the footer
-  footer <- grid::grobTree(grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")),
-                           grid::textGrob(source_name,
-                                          x = 0.004, hjust = 0, gp = grid::gpar(fontsize=16)),
-                           grid::rasterGrob(png::readPNG(logo_image_path), x = 0.944))
+  logos <- png::readPNG("dta/logov7.png")
+  # logos <- magick::image_read("dta/all3v2.png")
+  # logos <- logos %>%
+  #   # image_scale("200") %>%
+  #   image_background("#3f3f3f", flatten = TRUE) %>%
+  #   image_border("#3f3f3f", "1000x10")
+  footer <- grid::grobTree(
+                      grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",lwd	=0)),
+                      # grid::rasterGrob(png::readPNG(logo_image_path), x = 0.20),
+                      # grid::rasterGrob(png::readPNG("dta/Asset 1.png"), x = 0.4),
+                      grid::rasterGrob(logos, x = 0.8))
+    
   return(footer)
   
 }
-
+create_header <- function (source_name, logo_image_path) {
+  head <- png::readPNG("dta/header.png")
+  header <- grid::grobTree(
+    grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",lwd	=0)),
+    # grid::rasterGrob(png::readPNG(logo_image_path), x = 0.20),
+    # grid::rasterGrob(png::readPNG("dta/Asset 1.png"), x = 0.4),
+    grid::rasterGrob(head, x = 0.5))
+  
+  return(header)
+  
+}
 #' Arrange alignment and save BBC ggplot chart
 #'
 #' Running this function will save your plot with the correct guidelines for publication for a BBC News graphic.
@@ -57,12 +74,26 @@ finalise_plot <- function(plot_name,
                           logo_image_path = file.path(system.file("data", package = 'bbplot'),"placeholder.png")) {
   
   footer <- create_footer(source_name, logo_image_path)
+  header <- create_header(source_name, logo_image_path)
   
   #Draw your left-aligned grid
   plot_left_aligned <- left_align(plot_name, c("subtitle", "title", "caption"))
-  plot_grid <- ggpubr::ggarrange(plot_left_aligned, footer,
-                                 ncol = 1, nrow = 2,
-                                 heights = c(1, 0.045/(height_pixels/450)))
+  
+  # plot_grid <- ggpubr::ggarrange(plot_left_aligned,footer,
+  #                                ncol = 1, nrow = 2,
+  #                                # heights=c(1, .25/(height_pixels/800)))
+  #                                heights = c(1,.10))
+  
+  plot_grid <- gridExtra::grid.arrange(
+    # header,
+    plot_left_aligned,
+    footer,
+    nrow=2,
+    ncol = 1,
+    heights = c(1,.1))
+  
+  
+  
   ## print(paste("Saving to", save_filepath))
   save_plot(plot_grid, width_pixels, height_pixels, save_filepath)
   ## Return (invisibly) a copy of the graph. Can be assigned to a

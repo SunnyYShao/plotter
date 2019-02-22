@@ -11,7 +11,6 @@
 
 aapidata_style <- function() {
   font <- "Roboto Condensed"
-  
   ggplot2::theme(
     
     #Text format:
@@ -22,7 +21,8 @@ aapidata_style <- function() {
                                        color="#DFD8C0"),
     #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
     plot.subtitle = ggplot2::element_text(family=font,
-                                          size=24,
+                                          size=28,
+                                          color="#DFD8C0",
                                           margin=ggplot2::margin(9,0,9,0)),
     plot.caption = ggplot2::element_text(family=font,size= 12, hjust = .75, vjust = -5),
     #This leaves the caption text element empty, because it is set elsewhere in the finalise plot function
@@ -49,21 +49,26 @@ aapidata_style <- function() {
     axis.text.x = ggplot2::element_blank(),
     axis.text.y= ggplot2::element_text(color = "#DFD8C0", face="plain"),
     axis.ticks = ggplot2::element_blank(),
+    axis.ticks.length = unit(-1.5, "cm"),
     axis.line = ggplot2::element_blank(),
     
     #Grid lines
     #This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. The cookbook shows you examples for doing so
     panel.grid.minor = ggplot2::element_blank(),
-    panel.grid.major.y = ggplot2::element_line(color="#cbcbcb"),
+    panel.grid.major.y = ggplot2::element_blank(),
     panel.grid.major.x = ggplot2::element_blank(),
     
     #Blank background
     #This sets the panel background as blank, removing the standard grey ggplot background colour from the plot
+    # plot.background = ggplot2::element_blank(),
+    # panel.background = ggplot2::element_blank(),
+    
     plot.background = ggplot2::element_rect(fill = "#3f3f3f", color = "#3f3f3f"),
     panel.background = ggplot2::element_rect(fill = "#3f3f3f", color = "#3f3f3f"),
-    
+    # 
     #Strip background (#This sets the panel background for facet-wrapped plots to white, removing the standard grey ggplot background colour and sets the title size of the facet-wrap title to font size 22)
     strip.background = ggplot2::element_rect(fill="white"),
     strip.text = ggplot2::element_text(size  = 22,  hjust = 0)
+    
   )
 }
