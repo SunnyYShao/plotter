@@ -16,18 +16,21 @@ aapidata_style <- function() {
     #Text format:
     #This sets the font, size, type and colour of text for the chart's title
     plot.title = ggplot2::element_text(family="Roboto Condensed",
-                                       size=32,
+                                       size=40,
                                        face="bold",
                                        color="#DFD8C0",
-                                       vjust=.5),
+                                       vjust=.5,
+                                       hjust=.5),
+    # plot.margin=unit(c(-2,1,1,1), "cm"),# did not work
     #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
     plot.subtitle = ggplot2::element_text(family=font,
-                                          size=22,
+                                          size=35,
+                                          hjust=.5,
                                           face="italic",
                                           color="#DFD8C0",
                                           margin=ggplot2::margin(9,0,9,0)),
     plot.caption = ggplot2::element_text(family=font,
-                                         size= 12,
+                                         size= 18,
                                          hjust = .94,
                                          vjust = -1,
                                          face="italic",
@@ -42,17 +45,17 @@ aapidata_style <- function() {
     legend.title = ggplot2::element_blank(),
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family=font,
-                                        size=18,
+                                        size=28,
                                         color="#DFD8C0"),
     
     #Axis format
     #This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart - the cookbook shows examples of how to do so.
     axis.title = ggplot2::element_text(family="Roboto Condensed",
-                                       size=18,
+                                       size=28,
                                        face="bold",
                                        color="#3f3f3f"),
     axis.text = ggplot2::element_text(family="Roboto Condensed",
-                                      size=18,
+                                      size=25,
                                       face="bold",
                                       color="#222222"),
     axis.text.x = ggplot2::element_blank(),
