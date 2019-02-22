@@ -16,7 +16,7 @@ left_align <- function(plot_name, pieces){
 }
 
 create_footer <- function (source_name, logo_image_path) {
-  logos <- png::readPNG("dta/logov7.png")
+  logos <- png::readPNG(logo_image_path)
   # logos <- magick::image_read("dta/all3v2.png")
   # logos <- logos %>%
   #   # image_scale("200") %>%
@@ -32,7 +32,7 @@ create_footer <- function (source_name, logo_image_path) {
   
 }
 create_header <- function (source_name, logo_image_path) {
-  head <- png::readPNG("dta/header.png")
+  head <- png::readPNG("~/data-science/plotter/dta/header.png")
   header <- grid::grobTree(
     grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",lwd	=0)),
     # grid::rasterGrob(png::readPNG(logo_image_path), x = 0.20),
