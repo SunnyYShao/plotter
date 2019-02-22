@@ -25,7 +25,7 @@ create_footer <- function (source_name, logo_image_path) {
   footer <- grid::grobTree(
                       grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",col="#3f3f3f",lwd	=1)),
                       # grid::rasterGrob(logos, x = 0.8) # OG SETUP
-                      grid::rasterGrob(logos, x = 0.56)) # logo top
+                      grid::rasterGrob(logos, x = 0.56,y=.4)) # logo top
     
   return(footer)
   
