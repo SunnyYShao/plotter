@@ -58,6 +58,8 @@ aapidata_palettes <- list(
   
   `cat4`  = aapidata_cols("red", "light red", "orange", "blue"),
   
+  `cat4_special` = aapidata_cols("blue", "light orange", "grey", "red"),
+  
   `cat5`  = aapidata_cols("red", "light red", "light orange", "orange", "blue"),
   
   `cat6`  = aapidata_cols("red", "light red", "light orange", "orange", "light blue", "blue"),
