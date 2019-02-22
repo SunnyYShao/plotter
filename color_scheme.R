@@ -51,7 +51,7 @@ aapidata_palettes <- list(
   
   `degree_red` = aapidata_cols("darker red", "grey"),
   
-  `degree_orange` = aapidata_cols("orange","darker grey"),
+  `degree_orange` = aapidata_cols("orange","grey"),
   
   `yes_no`  = aapidata_cols("orange", "blue"),
   
