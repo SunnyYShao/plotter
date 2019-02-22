@@ -13,7 +13,8 @@ aapidata <- c(
   `grey` = "#C6C4C4",
   `darker grey` = "#B2B1B1",
   `light red`  = "#E28A86",
-  `red`  = "#DC7070")
+  `red`  = "#DC7070",
+  `darker red` = "#CE4952")
 
 #create a function that call the color by name
 aapidata_cols <- function(...) {
@@ -48,7 +49,7 @@ aapidata_palettes <- list(
   
   `degree_blue` = aapidata_cols("deep blue", "darker grey"),
   
-  `degree_red` = aapidata_cols("red", "darker grey"),
+  `degree_red` = aapidata_cols("darker red", "grey"),
   
   `degree_orange` = aapidata_cols("orange","darker grey"),
   
