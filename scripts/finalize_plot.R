@@ -15,19 +15,14 @@ save_plot <- function (plot_grid, width, height, save_filepath) {
 #   return(grob)
 # }
 
-create_footer <- function (source_name, logo_image_path) {
+add_logo <- function (source_name, logo_image_path) {
   logos <- png::readPNG(logo_image_path)
-  # logos <- magick::image_read("dta/all3v2.png")
-  # logos <- logos %>%
-  #   # image_scale("200") %>%
-  #   image_background("#3f3f3f", flatten = TRUE) %>%
-  #   image_border("#3f3f3f", "1000x10")
-  footer <- grid::grobTree(
+  logo_layer <- grid::grobTree(
                       grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",col="#3f3f3f",lwd	=1)),
                       # grid::rasterGrob(logos, x = 0.8) # OG SETUP
                       grid::rasterGrob(logos, x = 0.56,y=.4)) # logo top
     
-  return(footer)
+  return(logo_layer)
   
 }
 # create_header <- function (source_name, logo_image_path) {
@@ -72,7 +67,7 @@ finalise_plot <- function(plot_name,
                           height_pixels=450,
                           logo_image_path = file.path(system.file("data", package = 'bbplot'),"placeholder.png")) {
   
-  footer <- create_footer(source_name, logo_image_path)
+  logo_layer <- add_logo(source_name, logo_image_path)
   # header <- create_header(source_name, logo_image_path)
   
   #Draw your left-aligned grid
@@ -93,7 +88,7 @@ finalise_plot <- function(plot_name,
 
 ## LOGO TOP  
 plot_grid <- gridExtra::grid.arrange(
-  footer,
+  logo_layer,
   plot_name,
   nrow=2,
   ncol = 1,
