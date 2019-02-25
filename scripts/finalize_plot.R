@@ -20,7 +20,7 @@ add_logo <- function (source_name, logo_image_path) {
   logo_layer <- grid::grobTree(
                       grid::rectGrob(gp = grid::gpar(fill="#3f3f3f", color = "#3f3f3f",col="#3f3f3f",lwd	=1)),
                       # grid::rasterGrob(logos, x = 0.8) # OG SETUP
-                      grid::rasterGrob(logos, x = 0.56,y=.4)) # logo top
+                      grid::rasterGrob(logos, x = 0.56)) # logo top
     
   return(logo_layer)
   
@@ -92,7 +92,7 @@ plot_grid <- gridExtra::grid.arrange(
   plot_name,
   nrow=2,
   ncol = 1,
-  heights = c(.2,1))  
+  heights = c(.15,1))  
   
   
   ## print(paste("Saving to", save_filepath))
