@@ -22,8 +22,8 @@ test_plot <- test_dta %>%
 
 finalise_plot(plot_name = test_plot,
               source_name = "test2",width_pixels = 1400, height_pixels = 800,
-              logo_image_path = "dta/aapidata-logo-lighter.png",
-              save_filepath = "dta/test1.png")
+              logo_image_path = "dta/aapidata-only.png",
+              save_filepath = "dta/test2.png")
               # save_filepath = "dta/test.png")
 
 
