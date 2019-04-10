@@ -1,6 +1,6 @@
 # plotter single bar  --------------------------------------------------------
 #count estimate
-plotter_single_count <- function(dta, file_name, color_type, label_size, subtitle, caption){
+plotter_single_count <- function(logo_path, label_color, directory, style_function, dta, file_name, color_type, label_size, subtitle, caption){
   title <- dta[1,4]
   plot <- dta %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
@@ -14,8 +14,8 @@ plotter_single_count <- function(dta, file_name, color_type, label_size, subtitl
     #           size=11, color = "white", nudge_y =300000)+
     geom_text(aes(label=scales::comma(estimate)),
               position=position_dodge(width=1),
-              color="#3f3f3f", size=label_size, hjust="inward")+
-    aapidata_style()+
+              color=label_color, size=label_size, hjust="inward")+
+    style_function()+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
     labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=caption)
@@ -23,8 +23,8 @@ plotter_single_count <- function(dta, file_name, color_type, label_size, subtitl
   
   finalise_plot(plot_name = plot,
                 width_pixels = 1400, height_pixels = 800,
-                logo_image_path = "/Users/sunnyshao/Dropbox/AAPIData HQ/2019 APALA Report/logov3.png", ## YOU WILL NEED TO
-                save_filepath = paste0("final_graph/", file_name))
+                logo_image_path = logo_path, ## YOU WILL NEED TO
+                save_filepath = paste0(directory, file_name))
 }
 
 # plotter single bar percent
