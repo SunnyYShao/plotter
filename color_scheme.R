@@ -5,10 +5,13 @@
 #all possible colors for infographics
 aapidata <- c(
   `orange`       = "#EE8B46",
+  `darker orange` = "#f46a09",
+  `dark orange` = "#f4771f",
   `light orange` = "#EFA875",
   `tan`       = "#EDDD9D",
   `light blue`     = "#A3C8D1",
   `blue`     = "#63BBD1",
+  `deeper blue` = "#02a9d0",
   `deep blue` = "#1BACCE",
   `grey` = "#C6C4C4",
   `darker grey` = "#B2B1B1",
@@ -35,7 +38,11 @@ aapidata_palettes <- list(
   
   `single_blue` = aapidata_cols("blue"),
   
+  `single_dblue` = aapidata_cols("deep blue"),
+  
   `single_orange` = aapidata_cols("orange"),
+  
+  `single_dorange` = aapidata_cols("dark orange"),
   
   `scale2` = aapidata_cols("red", "orange"),
   
@@ -44,6 +51,10 @@ aapidata_palettes <- list(
   `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
   
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
+  
+  `scale5_2` = aapidata_cols("darker orange", "orange", "blue", "deeper blue", "darker grey"),
+  
+  `scale5_special` = aapidata_cols("light orange", "grey", "light red", "red", "darker red"),
   
   `scale6` = aapidata_cols("red", "light red", "orange", "light orange", "light blue", "blue"),
   
@@ -55,9 +66,17 @@ aapidata_palettes <- list(
   
   `yes_no`  = aapidata_cols("orange", "blue"),
   
+  `yes_no_dk`  = aapidata_cols("darker orange", "deeper blue", "darker grey"),
+  
+  `cat2`  = aapidata_cols("blue", "deeper blue"),
+  
   `cat3`  = aapidata_cols("red", "orange", "blue"),
   
+  `cat3_special`  = aapidata_cols("deeper blue", "blue", "orange"),
+  
   `cat4`  = aapidata_cols("red", "light red", "orange", "blue"),
+  
+  `cat4_2`  = aapidata_cols("deeper blue", "blue", "orange", "darker orange"),
   
   `cat4_special` = aapidata_cols("blue", "light orange", "grey", "red"),
   
