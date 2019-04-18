@@ -44,17 +44,21 @@ aapidata_palettes <- list(
   
   `single_dorange` = aapidata_cols("dark orange"),
   
+  `scale_orange` = aapidata_cols("dark orange", "orange", "light orange", "grey"),
+  
   `scale2` = aapidata_cols("red", "orange"),
   
   `scale3` = aapidata_cols("red", "grey", "orange"),
   
   `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
   
+  `scale4_special` = aapidata_cols("orange", "tan", "blue", "grey"),
+  
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
   
   `scale5_2` = aapidata_cols("darker orange", "orange", "blue", "deeper blue", "darker grey"),
   
-  `scale5_special` = aapidata_cols("light orange", "grey", "light red", "red", "darker red"),
+  `scale5_special` = aapidata_cols("orange", "light orange", "light blue", "blue", "grey"),
   
   `scale6` = aapidata_cols("red", "light red", "orange", "light orange", "light blue", "blue"),
   
@@ -62,11 +66,11 @@ aapidata_palettes <- list(
   
   `degree_red` = aapidata_cols("darker red", "grey"),
   
-  `degree_orange` = aapidata_cols("orange","grey"),
+  `degree_orange` = aapidata_cols("darker orange","grey"),
   
   `yes_no`  = aapidata_cols("orange", "blue"),
   
-  `yes_no_dk`  = aapidata_cols("darker orange", "deeper blue", "darker grey"),
+  `yes_no_dk`  = aapidata_cols("orange", "blue", "grey"),
   
   `cat2`  = aapidata_cols("blue", "deeper blue"),
   
