@@ -9,6 +9,7 @@ aapidata <- c(
   `dark orange` = "#f4771f",
   `light orange` = "#EFA875",
   `tan`       = "#EDDD9D",
+  `darker tan` = "#eece4d",
   `light blue`     = "#A3C8D1",
   `blue`     = "#63BBD1",
   `deeper blue` = "#02a9d0",
@@ -52,7 +53,7 @@ aapidata_palettes <- list(
   
   `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
   
-  `scale4_special` = aapidata_cols("orange", "tan", "blue", "grey"),
+  `scale4_special` = aapidata_cols("darker orange", "orange", "blue", "deeper blue"),
   
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
   
