@@ -1,8 +1,8 @@
 # plotter single bar  --------------------------------------------------------
 #count estimate
-plotter_single_count <- function(logo_path, label_color, directory, style_function, dta, file_name, color_type, label_size, subtitle, caption){
-  title <- dta[1,4]
-  plot <- dta %>%
+plotter_single_count <- function(data, color_type, style_function, logo_image_path, label_color, label_size, subtitle, footnote, directory, file_name){
+  title <- data()[1,4]
+  plot <- data %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
     geom_bar(stat="identity",
              width=.7,
@@ -18,20 +18,20 @@ plotter_single_count <- function(logo_path, label_color, directory, style_functi
     style_function()+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
-    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=caption)
+    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
   
   
   finalise_plot(plot_name = plot,
                 width_pixels = 1400, height_pixels = 800,
-                logo_image_path = logo_path, ## YOU WILL NEED TO
+                logo_image_path = logo_image_path, ## YOU WILL NEED TO
                 save_filepath = paste0(directory, file_name))
 }
 
 # plotter single bar percent
 
-plotter_single_pct <- function(dta, file_name, color_type, label_size, subtitle, caption){
-  title <- dta[1,4]
-  plot <- dta %>%
+plotter_single_pct <- function(data, color_type, style_function, logo_image_path, label_color, label_size, subtitle, footnote, directory, file_name){
+  title <- data[1,4]
+  plot <- data %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
     geom_bar(stat="identity",
              width=.7,
@@ -40,22 +40,22 @@ plotter_single_pct <- function(dta, file_name, color_type, label_size, subtitle,
     scale_y_continuous(labels=scales::percent, limits = c(0, 1))+
     geom_text(aes(label=scales::percent(estimate, 1)),
               position = position_stack(reverse = TRUE),
-              size=label_size, color = "#3f3f3f", hjust="inward")+
-    aapidata_style()+
+              size=label_size, color = label_color, hjust="inward")+
+    style_function()+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
-    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=caption)
+    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
   
   
   finalise_plot(plot_name = plot,
                 width_pixels = 1400, height_pixels = 800,
-                logo_image_path = "/Users/sunnyshao/Dropbox/AAPIData HQ/2019 APALA Report/logov3.png", ## YOU WILL NEED TO
-                save_filepath = paste0("final_graph/", file_name))
+                logo_image_path = logo_image_path, ## YOU WILL NEED TO
+                save_filepath = paste0(directory, file_name))
 }
 
-plotter_single_pct_unlim <- function(dta, file_name, color_type, label_size, subtitle, caption){
-  title <- dta[1,4]
-  plot <- dta %>%
+plotter_single_pct_unlim <- function(data, color_type, style_function, logo_image_path, label_color, label_size, subtitle, footnote, directory, file_name){
+  title <- data[1,4]
+  plot <- data %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
     geom_bar(stat="identity",
              width=.7,
@@ -64,22 +64,22 @@ plotter_single_pct_unlim <- function(dta, file_name, color_type, label_size, sub
     scale_y_continuous(labels=scales::percent)+
     geom_text(aes(label=scales::percent(estimate, accuracy = 1)),
               position = position_stack(reverse = TRUE),
-              size=label_size, color = "#3f3f3f", hjust="inward")+
-    aapidata_style()+
+              size=label_size, color = label_color, hjust="inward")+
+    style_function()+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
-    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=caption)
+    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
   
   
   finalise_plot(plot_name = plot,
                 width_pixels = 1400, height_pixels = 800,
-                logo_image_path = "/Users/sunnyshao/Dropbox/AAPIData HQ/2019 APALA Report/logov3.png", ## YOU WILL NEED TO
-                save_filepath = paste0("final_graph/", file_name))
+                logo_image_path = logo_image_path, ## YOU WILL NEED TO
+                save_filepath = paste0(directory, file_name))
 }
 #single bar percent unlimited with smaller axis label font size
-plotter_single_pct_unlim_small <- function(dta, file_name, color_type, label_size, subtitle, caption){
-  title <- dta[1,4]
-  plot <- dta %>%
+plotter_single_pct_unlim_small <- function(data, color_type, style_function, logo_image_path, label_color, label_size, subtitle, footnote, directory, file_name){
+  title <- data[1,4]
+  plot <- data %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
     geom_bar(stat="identity",
              width=.7,
@@ -88,15 +88,15 @@ plotter_single_pct_unlim_small <- function(dta, file_name, color_type, label_siz
     scale_y_continuous(labels=scales::percent)+
     geom_text(aes(label=scales::percent(estimate, accuracy = 1)),
               position = position_stack(reverse = TRUE),
-              size=label_size, color = "#3f3f3f", hjust="inward")+
-    aapidata_style_smallx()+
+              size=label_size, color = label_color, hjust="inward")+
+    style_function()+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
-    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=caption)
+    labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
   
   
   finalise_plot(plot_name = plot,
                 width_pixels = 1400, height_pixels = 800,
-                logo_image_path = "/Users/sunnyshao/Dropbox/AAPIData HQ/2019 APALA Report/logov3.png", ## YOU WILL NEED TO
-                save_filepath = paste0("final_graph/", file_name))
+                logo_image_path = logo_image_path,
+                save_filepath = paste0(directory, file_name))
 }
