@@ -1,7 +1,7 @@
 # plotter single bar  --------------------------------------------------------
 #count estimate
 plotter_single_count <- function(data, color_type, style_function, logo_image_path, label_color, label_size, subtitle, footnote, directory, file_name){
-  title <- data()[1,4]
+  title <- data[1,4]
   plot <- data %>%
     ggplot(aes(x = reorder(group, estimate), y = estimate, fill = key))+
     geom_bar(stat="identity",
