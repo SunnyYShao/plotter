@@ -9,8 +9,8 @@ plotter_stacked_pct <- function(data, color_type, style_function, logo_image_pat
              width=.7,
              position = position_stack(reverse = TRUE))+
     coord_flip()+
-    scale_y_continuous(labels=scales::percent, limits = c(0, 1.1))+
-    geom_text(aes(label = ifelse(estimate < 0.03, NA, scales::percent(estimate, 1))),
+    scale_y_continuous(labels=scales::percent, limits = c(0, 1.05))+
+    geom_text(aes(label = ifelse(estimate < 0.035, NA, scales::percent(estimate, 1))),
               position = position_stack(reverse = TRUE,vjust = .5),
               size=label_size, color = label_color)+
     style_function()+

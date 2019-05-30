@@ -18,7 +18,9 @@ aapidata <- c(
   `darker grey` = "#B2B1B1",
   `light red`  = "#E28A86",
   `red`  = "#DC7070",
-  `darker red` = "#CE4952")
+  `darker red` = "#CE4952",
+  `green` = "#64C5B1",
+  `yellow` = "#F6B519")
 
 #create a function that call the color by name
 aapidata_cols <- function(...) {
@@ -51,13 +53,15 @@ aapidata_palettes <- list(
   
   `scale3` = aapidata_cols("red", "grey", "orange"),
   
-  `scale4` = aapidata_cols("red", "light red", "light orange", "orange"),
+  `scale4` = aapidata_cols("orange", "blue", "deeper blue", "grey"),
   
   `scale4_special` = aapidata_cols("darker orange", "orange", "blue", "deeper blue"),
   
   `scale5` = aapidata_cols("red", "light red", "grey", "light orange", "orange"),
   
   `scale5_2` = aapidata_cols("darker orange", "orange", "blue", "deeper blue", "darker grey"),
+  
+  `edu5` = aapidata_cols("orange", "light orange", "grey", "blue", "deeper blue"),
   
   `scale5_special` = aapidata_cols("orange", "light orange", "light blue", "blue", "grey"),
   
@@ -67,7 +71,9 @@ aapidata_palettes <- list(
   
   `degree_red` = aapidata_cols("darker red", "grey"),
   
-  `degree_orange` = aapidata_cols("darker orange","grey"),
+  `degree_orange` = aapidata_cols("darker orange","darker grey"),
+  
+  `degree_orange2` = aapidata_cols("darker grey", "darker orange"),
   
   `yes_no`  = aapidata_cols("orange", "blue"),
   
@@ -86,6 +92,8 @@ aapidata_palettes <- list(
   `cat4_special` = aapidata_cols("blue", "light orange", "grey", "red"),
   
   `cat5`  = aapidata_cols("red", "light red", "light orange", "orange", "blue"),
+  
+  `cat5_races`  = aapidata_cols("red", "orange", "yellow", "green", "blue"),
   
   `cat6`  = aapidata_cols("red", "light red", "light orange", "orange", "light blue", "blue"),
   
