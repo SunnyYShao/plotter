@@ -65,8 +65,8 @@ finalise_plot <- function(plot_name,
                           save_filepath=file.path(Sys.getenv("TMPDIR"), "tmp-nc.png"),
                           # width_pixels=640,
                           # height_pixels=450,
-                          width_pixels= 300,
-                          height_pixels= 450,
+                          width_pixels,
+                          height_pixels,
                           logo_image_path = file.path(system.file("data", package = 'bbplot'),"placeholder.png")) {
   
   logo_layer <- add_logo(source_name, logo_image_path)
