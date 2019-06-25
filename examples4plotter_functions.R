@@ -110,7 +110,7 @@ plotter_multi_pct(data = multi_bar_pct, color_type = "yes_no",
 
 #horizontal stacked bar
 plotter_stacked_pct(data = stacked_bar_pct, color_type = "scale5_2", 
-                    style_function = aapidata_style_smallx(), logo_image_path = "examples/logo_aapidata.png",
+                    style_function = aapidata_style_smallx, logo_image_path = "examples/logo_aapidata.png",
                     label_color = "#ffffff", label_size = 7, 
                     subtitle = "How important is it that workers can retire with dignity and financial security?\n", 
                     footnote = "Source: Asian American Voter Survey 2018 \n",
