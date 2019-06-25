@@ -21,7 +21,7 @@ plotter_multi_pct <- function(data, color_type, style_function, logo_image_path,
     labs(title = title, subtitle = subtitle, fill="",x="", y="", caption=footnote)
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path,
                 save_filepath = paste0(directory, file_name))
 }
@@ -45,7 +45,7 @@ plotter_multi_count <- function(data, color_type, style_function, logo_image_pat
     labs(title = title, subtitle = subtitle, fill="",x="", y="", caption=footnote)
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path,
                 save_filepath = paste0(directory, file_name))
 }

@@ -22,7 +22,7 @@ plotter_single_count <- function(data, color_type, style_function, logo_image_pa
   
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path, ## YOU WILL NEED TO
                 save_filepath = paste0(directory, file_name))
 }
@@ -48,7 +48,7 @@ plotter_single_pct <- function(data, color_type, style_function, logo_image_path
   
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path, ## YOU WILL NEED TO
                 save_filepath = paste0(directory, file_name))
 }
@@ -72,7 +72,7 @@ plotter_single_pct_unlim <- function(data, color_type, style_function, logo_imag
   
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path, ## YOU WILL NEED TO
                 save_filepath = paste0(directory, file_name))
 }
@@ -96,7 +96,7 @@ plotter_single_pct_unlim_small <- function(data, color_type, style_function, log
   
   
   finalise_plot(plot_name = plot,
-                width_pixels = 1400, height_pixels = 800,
+                width_pixels = 1040, height_pixels = 800,
                 logo_image_path = logo_image_path,
                 save_filepath = paste0(directory, file_name))
 }
