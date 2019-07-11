@@ -1,8 +1,15 @@
+install.packages("tidyverse")
+install.packages("magick")
+install.packages("readxl")
+install.packages("readr")
+
 library(tidyverse)
 library(tidycensus)
 library(magick)
 library(readxl)
 library(readr)
+
+
 
 source("color_scheme.R")
 source("scripts/aapidata_style.R")
