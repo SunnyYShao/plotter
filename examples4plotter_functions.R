@@ -1,8 +1,15 @@
+
+# install required packages -----------------------------------------------
 install.packages("tidyverse")
 install.packages("magick")
 install.packages("readxl")
 install.packages("readr")
+install.packages("png")
+install.packages("gridExtra")
+install.packages("dplyr")
+install.packages("ggplot2")
 
+# library the following packages ------------------------------------------
 library(tidyverse)
 library(tidycensus)
 library(magick)
@@ -11,12 +18,14 @@ library(readr)
 
 
 
+# Source all the plotting functions ---------------------------------------
 source("color_scheme.R")
 source("scripts/aapidata_style.R")
 source("scripts/finalize_plot.R")
 source("scripts/plotter_single_bar.R")
 source("scripts/plotter_stacked_bar.R")
 source("scripts/plotter_multi_single_bar.R")
+
 # cleaning the data -----------------------------------------------------------------
 ## 1. load the data
 dta <- read_excel("examples/data_single_bar.xlsx")
