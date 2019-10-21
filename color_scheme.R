@@ -20,7 +20,9 @@ aapidata <- c(
   `red`  = "#DC7070",
   `darker red` = "#CE4952",
   `green` = "#64C5B1",
-  `yellow` = "#F6B519")
+  `yellow` = "#F6B519",
+  `CSI_green` = "#96b192",
+  `CSI_dgreen` = "#406438")
 
 #create a function that call the color by name
 aapidata_cols <- function(...) {
@@ -37,6 +39,8 @@ aapidata_cols()
 #each color palette need to have the same number of groups as the table we are trying to graph
 aapidata_palettes <- list(
   #the code pull colors from both end (instead of  left-to-right)
+  `CSI_2color` = aapidata_cols("CSI_green", "CSI_dgreen"),
+  
   `single_red` = aapidata_cols("red"),
   
   `single_blue` = aapidata_cols("blue"),
