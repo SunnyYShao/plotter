@@ -1,6 +1,10 @@
+# install the latest R and Rstudio -----------------------------------------------
 
+# latest R: https://cloud.r-project.org/
+#Latest Rstudio: https://rstudio.com/products/rstudio/download/#download
+  
 # install required packages -----------------------------------------------
-install.packages("tidyverse")
+# install.packages("tidyverse")
 install.packages("magick")
 install.packages("readxl")
 install.packages("readr")
@@ -8,15 +12,14 @@ install.packages("png")
 install.packages("gridExtra")
 install.packages("dplyr")
 install.packages("ggplot2")
-
+install.packages("here")
 # library the following packages ------------------------------------------
 library(tidyverse)
-library(tidycensus)
+# library(tidycensus)
 library(magick)
 library(readxl)
-library(readr)
-
-
+# library(readr)
+library(here)
 
 # Source all the plotting functions ---------------------------------------
 source("color_scheme.R")
@@ -81,7 +84,7 @@ multi_bar_pct <- read_csv("examples/data_multi_bar.csv") %>%
 
 #single bar for count data
 plotter_single_count(data = single_bar_count, color_type = "single_dorange", 
-                     style_function = aapidata_style, logo_image_path = "examples/logo_aapidata.png",
+                     style_function = aapidata_style(), logo_image_path = "examples/logo_aapidata.png",
                      label_color = "#ffffff", label_size = 7, 
                      subtitle = " ", 
                      footnote = "Source: American Community Survey 2017 1-Year files\n",
@@ -89,7 +92,7 @@ plotter_single_count(data = single_bar_count, color_type = "single_dorange",
 
 #single bar for proportion data
 plotter_single_pct(data = single_bar_pct, color_type = "single_dorange", 
-                     style_function = aapidata_style, logo_image_path = "examples/logo_aapidata.png",
+                     style_function = aapidata_style(), logo_image_path = "examples/logo_aapidata.png",
                      label_color = "#ffffff", label_size = 7, 
                      subtitle = " ", 
                      footnote = "Source: American Community Survey 2017 1-Year files\n",
@@ -98,7 +101,7 @@ plotter_single_pct(data = single_bar_pct, color_type = "single_dorange",
 
 #single bar for proportion data with unconstraint width
 plotter_single_pct_unlim(data = single_bar_pct_unlim, color_type = "single_dorange", 
-                   style_function = aapidata_style, logo_image_path = "examples/logo_aapidata.png",
+                   style_function = aapidata_style(), logo_image_path = "examples/logo_aapidata.png",
                    label_color = "#ffffff", label_size = 7, 
                    subtitle = " ", 
                    footnote = "Source: American Community Survey 2017 1-Year files\n",
@@ -106,7 +109,7 @@ plotter_single_pct_unlim(data = single_bar_pct_unlim, color_type = "single_doran
 
 #single bar for proportion data with smaller y-axis font size due to large # of groups
 plotter_single_pct_unlim_small(data = single_bar_pct_unlim, color_type = "single_dorange", 
-                         style_function = aapidata_style_smallx, logo_image_path = "examples/logo_aapidata.png",
+                         style_function = aapidata_style_smallx(), logo_image_path = "examples/logo_aapidata.png",
                          label_color = "#ffffff", label_size = 7, 
                          subtitle = " ", 
                          footnote = "Source: American Community Survey 2017 1-Year files\n",
@@ -114,7 +117,7 @@ plotter_single_pct_unlim_small(data = single_bar_pct_unlim, color_type = "single
 
 # multiple single bar graphs
 plotter_multi_pct(data = multi_bar_pct, color_type = "yes_no", 
-                  style_function = aapidata_style, logo_image_path = "examples/logo_aapidata.png",
+                  style_function = aapidata_style(), logo_image_path = "examples/logo_aapidata.png",
                   label_color = "#ffffff", label_size = 7, 
                   subtitle = " ",
                   footnote = "Source: American Community Survey 2017\n",
@@ -126,15 +129,15 @@ plotter_multi_pct(data = multi_bar_pct, color_type = "yes_no",
 
 #horizontal stacked bar
 plotter_stacked_pct(data = stacked_bar_pct, color_type = "scale5_2", 
-                    style_function = aapidata_style_smallx, logo_image_path = "examples/logo_aapidata.png",
-                    label_color = "#ffffff", label_size = 7, 
+                    style_function = aapidata_style_smallx(), logo_image_path = "examples/logo_aapidata.png",
+                    label_color = "#ffffff", label_size = 10, 
                     subtitle = "How important is it that workers can retire with dignity and financial security?\n", 
                     footnote = "Source: Asian American Voter Survey 2018 \n",
                     directory = "examples/", file_name = "stacked_bar_pct_smallX_example.png")
 
 #vertial stacked bar
 plotter_Vstacked_pct(data = Vstacked_bar_pct, color_type = "yes_no", 
-                    style_function = aapidata_Vstyle, logo_image_path = "examples/logo_aapidata.png",
+                    style_function = aapidata_Vstyle(), logo_image_path = "examples/logo_aapidata.png",
                     label_color = "#ffffff", label_size = 7, 
                     subtitle = " ",
                     footnote = "Source: CPS Ongoing Rotation Group 2010-2018 \n",
