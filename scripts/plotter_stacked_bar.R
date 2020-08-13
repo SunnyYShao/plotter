@@ -13,7 +13,7 @@ plotter_stacked_pct <- function(data, color_type, style_function, logo_image_pat
     geom_text(aes(label = ifelse(estimate < 0.035, NA, scales::percent(estimate, 1))),
               position = position_stack(reverse = TRUE,vjust = .5),
               size=label_size, color = label_color)+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "top")+
     theme(legend.position = 'top',
@@ -38,7 +38,7 @@ plotter_Vstacked_pct <- function(data, color_type, style_function, logo_image_pa
     geom_text(aes(label = ifelse(estimate < .008, NA, scales::percent(estimate, 0.1))),
               position = position_stack(vjust = .5),
               size=label_size, color = label_color)+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "top")+
     theme(legend.position = 'top',

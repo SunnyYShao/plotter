@@ -13,7 +13,7 @@ plotter_multi_pct <- function(data, color_type, style_function, logo_image_path,
     geom_text(aes(label=scales::percent(estimate,1)),
               position = position_dodge(width = 1),
               size=label_size, color = label_color, hjust="inward")+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "top")+
     theme(legend.position = 'top',
@@ -37,7 +37,7 @@ plotter_multi_count <- function(data, color_type, style_function, logo_image_pat
       geom_text(aes(label = ifelse(estimate < .001, NA, paste(estimate, "million"))),
               position = position_dodge(width = 1),
               size=label_size, color = label_color, vjust=-0.2)+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "top")+
     theme(legend.position = 'top',

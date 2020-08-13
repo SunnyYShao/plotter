@@ -15,7 +15,7 @@ plotter_single_count <- function(data, color_type, style_function, logo_image_pa
     geom_text(aes(label=scales::comma(estimate)),
               position=position_dodge(width=1),
               color=label_color, size=label_size, hjust="inward")+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
     labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
@@ -41,7 +41,7 @@ plotter_single_pct <- function(data, color_type, style_function, logo_image_path
     geom_text(aes(label=scales::percent(estimate, 1)),
               position = position_stack(reverse = TRUE),
               size=label_size, color = label_color, hjust="inward")+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
     labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
@@ -65,7 +65,7 @@ plotter_single_pct_unlim <- function(data, color_type, style_function, logo_imag
     geom_text(aes(label=scales::percent(estimate, accuracy = 1)),
               position = position_stack(reverse = TRUE),
               size=label_size, color = label_color, hjust="inward")+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
     labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
@@ -89,7 +89,7 @@ plotter_single_pct_unlim_small <- function(data, color_type, style_function, log
     geom_text(aes(label=scales::percent(estimate, accuracy = 1)),
               position = position_stack(reverse = TRUE),
               size=label_size, color = label_color, hjust="inward")+
-    style_function()+
+    style_function+
     scale_fill_aapidata(palette = color_type)+
     theme(legend.position = "none")+
     labs(title = paste0("\n", title, sep=""), subtitle=subtitle, fill="",x="", y="", caption=footnote)
